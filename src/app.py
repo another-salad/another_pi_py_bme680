@@ -5,6 +5,7 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
+
 def _get_temp_data():
     i2c = board.I2C()
     sensor = adafruit_bme680.Adafruit_BME680_I2C(i2c)
@@ -13,6 +14,7 @@ def _get_temp_data():
         "humidity": round(sensor.humidity, 2),
         "gas": sensor.gas,
     }
+
 
 @app.route("/api")
 def sensor_data():
@@ -27,6 +29,7 @@ def home():
     <p>Temperature: {data['temperature_celsius']}</p>
     <p>Humidity: {data['humidity']}</p>
     """
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
