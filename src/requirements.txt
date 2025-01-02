@@ -1,0 +1,2 @@
+adafruit-circuitpython-bme680
+Flask>=3.1.0
